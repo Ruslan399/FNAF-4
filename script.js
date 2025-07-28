@@ -106,3 +106,24 @@ nextBtn.addEventListener("click", () => goToSlide(index + 1));
 
 // Автопрокрутка каждые 10 секунд
 setInterval(() => goToSlide(index + 1), 10000);
+const themeToggle = document.querySelector('.theme-toggle'); 
+let clickCount = 0;
+let clickTimer;
+
+themeToggle.addEventListener('click', () => {
+  clickCount++;
+
+  // Если первый клик — запускаем таймер на 500 мс
+  if (clickCount === 1) {
+    clickTimer = setTimeout(() => {
+      clickCount = 0; // Сбрасываем счётчик, если клики медленные
+    }, 500);
+  }
+
+  // Если 3 клика за 500 мс — пасхалка
+  if (clickCount >= 3) {
+    clearTimeout(clickTimer);
+    clickCount = 0;
+    window.open('https://youtu.be/U2cmLr-RPmM?si=gfC-__F06UvEG27i'); // Ссылка на видео
+  }
+});
