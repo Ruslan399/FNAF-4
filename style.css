@@ -334,3 +334,42 @@ body.light .burger { color: #000; }
   .theme-toggle img { width: 36px; height: 36px; }
   section { padding: 40px 10px; }
 }
+.account-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 10px;
+  display: none;
+  z-index: 10;
+}
+
+#account-btn:hover .account-menu {
+  display: block;
+}
+
+.account-menu .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+@media (max-width: 480px) {
+  h1 { 
+    font-size: 24px; 
+  }
+  .theme-toggle img { 
+    width: 36px; 
+    height: 36px; 
+  }
+  section { 
+    padding: 40px 10px; 
+  }
+
+  /* Уменьшение заголовка Five Nights at Freddy's */
+  .top-bar h1 {
+    font-size: 20px;
+  }
+}
