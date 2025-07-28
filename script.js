@@ -70,3 +70,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+const slide = document.getElementById("carouselSlide");
+const dotsContainer = document.getElementById("carouselDots");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+const totalSlides = slide.children.length;
+let index = 0;
+
+// Создаём точки
+for (let i = 0; i < totalSlides; i++) {
+  const dot = document.createElement("span");
+  dot.addEventListener("click", () => goToSlide(i));
+  dotsContainer.appendChild(dot);
+}
+updateDots();
+
+// Переход к слайду
+function goToSlide(n) {
+  index = (n + totalSlides) % totalSlides;
+  slide.style.transform = `translateX(-${index * 600}px)`;
+  updateDots();
+}
+
+// Обновление точек
+function updateDots() {
+  dotsContainer.querySelectorAll("span").forEach((dot, i) => {
+    dot.classList.toggle("active", i === index);
+  });
+}
+
+// Кнопки
+prevBtn.addEventListener("click", () => goToSlide(index - 1));
+nextBtn.addEventListener("click", () => goToSlide(index + 1));
+
+// Автопрокрутка каждые 10 секунд
+setInterval(() => goToSlide(index + 1), 10000);
