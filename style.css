@@ -362,4 +362,41 @@ body.light .burger { color: #000; }
   border-radius: 50%;
   margin-bottom: 10px;
 }
+/* === Карусель (Fanart) === */
+.carousel-slide img {
+  width: 800px;   /* одинаковая ширина */
+  height: 500px;  /* одинаковая высота */
+  object-fit: cover; /* обрезка по краям для сохранения пропорций */
+  border-radius: 12px;
+  flex-shrink: 0;
+  margin: auto;
+}
 
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .carousel-slide img {
+    width: 95%;
+    height: 300px; /* чуть меньше высота на телефоне */
+  }
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+  width: 100%;
+  max-width: 800px; /* Ограничиваем максимум */
+  height: auto;
+  border-radius: 12px;
+  flex-shrink: 0;
+  margin: auto;
+}
+
+/* Адаптив под мобильные */
+@media (max-width: 768px) {
+  .carousel-slide img {
+    max-width: 95%;
+  }
+}
