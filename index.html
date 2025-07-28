@@ -71,13 +71,21 @@
   </section>
 
   <section id="fanart" class="fade-in-up delay-4">
-    <h2>Фан-арты</h2>
-    <div class="gallery">
-      <img src="https://i.redd.it/telvshob8pi61.jpg" alt="Фанарт 1" class="jump" />
-      <img src="https://i.pinimg.com/736x/c6/b0/9e/c6b09ec329d49c113955d2801f896c9d.jpg" alt="Фанарт 2" class="jump delay-1" />
-      <img src="https://preview.redd.it/lrzaapql1b751.jpg?width=1080&crop=smart&auto=webp&s=0e31b9fbd603b8bd752f70b0494a469b0395cdb6" alt="Фанарт 3" class="jump delay-2" />
+  <h2>Фан-арты</h2>
+  
+  <div class="carousel-container">
+    <div class="carousel-slide" id="carouselSlide">
+      <img src="https://i.redd.it/telvshob8pi61.jpg" alt="Фанарт 1">
+      <img src="https://i.pinimg.com/736x/c6/b0/9e/c6b09ec329d49c113955d2801f896c9d.jpg" alt="Фанарт 2">
+      <img src="https://preview.redd.it/lrzaapql1b751.jpg?width=1080&crop=smart&auto=webp&s=0e31b9fbd603b8bd752f70b0494a469b0395cdb6" alt="Фанарт 3">
     </div>
-  </section>
+    <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
+    <button class="carousel-btn next" id="nextBtn">&#10095;</button>
+  </div>
+
+  <div class="carousel-dots" id="carouselDots"></div>
+</section>
+
 
   <section id="music" class="fade-in-up delay-5">
     <h2>Музыка</h2>
@@ -99,5 +107,6 @@
   <footer class="fade-in-scale delay-6">
     <p>© 2025 Сайт сделан Ruslanom Revinom</p>
   <script src="script.js"></script>
+  <script src="auth.js"></script>
 </body>
 </html>
